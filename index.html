@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technomir</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href="css/jquery.fs.selecter.css">
+    <!--<link rel="stylesheet" type="text/css" href="css/jcf.css">-->
+    <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.js"></script>
+    <!--<script type="text/javascript" src="js/jcf.js"></script>
+    <script type="text/javascript" src="js/jcf.select.js"></script>
+    <script type="text/javascript" src="js/jcf.scrollable.js"></script>-->
+    <script src="js/jquery.fs.selecter.min.js"></script>
+    <script src="js/modernizr.js"></script>
+    <script>
+        $( function() {
+            $('#price').change(function(){
+                var val = $(this).val();
+                $('#slider_price').slider('values', 0, val);
+            });
+
+            $('#price2').change(function(){
+                var val = $(this).val();
+                $('#slider_price').slider('values', 1, val);
+            });
+
+            $( "#slider_price" ).slider({
+                range: true,
+                min: 50,
+                max: 2500,
+                values: [ 400, 1800 ],
+                slide: function( event, ui ) {
+                    //$( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
+                    $('#price').val(ui.values[ 0 ]);
+                    $('#price2').val(ui.values[ 1 ]);
+                }
+            });
+            //$( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) +
+                   // " - $" + $( "#slider-range" ).slider( "values", 1 ) );
+            $('#price').val($('#slider_price').slider('values', 0));
+            $('#price2').val($('#slider_price').slider('values', 1));
+        } );
+    </script>
+</head>
+<body>
+    <div id="wrapper">
+        <div class="hidden-box call-back">
+            <div class="hidden">
+                <span class="close-call-back"></span>
+                <span class="call-back name">ЗАКАЗАТЬ ОБРАТНЫЙ ЗВОНОК</span>
+                <div class="call-back text">
+                    <p>Введите контактные данные и наш менеджер свяжется с Вами в кротчайшие сроки</p>
+                </div>
+                <form class="call-back form">
+                    <div class="input text">
+                        <input type="text" placeholder="Имя">
+                    </div>
+                    <div class="input tel">
+                        <input type="tel" placeholder="Телефон">
+                    </div>
+                    <button type="submit">ПЕРЕЗВОНИТЬ МНЕ</button>
+                </form>
+            </div>
+        </div>
+        <div class="hidden-box enter">
+            <div class="hidden">
+                <span class="close-enter"></span>
+                <span class="enter name">ВОЙТИ В ЛИЧНЫЙ КАБИНЕТ</span>
+                <div class="enter text">
+                    <p>Мы смотрим в будущее. И мы видим наши перспективы сегодня.
+                        Наша деятельность состоит в том, чтобы предвидеть ход возможных изменений завтра
+                        и обеспечить нашей компании успех и актуальность в будущем. Тем самым дать нашим
+                        клиентам гарантию надежного партнерства.</p>
+                </div>
+                <form class="enter form">
+                    <div class="input text">
+                        <input type="text" name="login" placeholder="Введите логин">
+                    </div>
+                    <div class="input password">
+                        <input type="password" name="password" placeholder="Введите пароль">
+                    </div>
+                    <div class="remember-forget">
+                        <input type="checkbox" id="remember" value="remember"><label for="remember">Запомнить меня</label>
+                        <span class="forget"><a href="#">Забыли пароль?</a></span>
+                    </div>
+                    <button type="submit">ВОЙТИ</button>
+                    <span class="create"><a href="#">СОЗДАТЬ АККАУНТ</a></span>
+                </form>
+            </div>
+        </div>
+        <header id="header">
+            <div class="header-top">
+                <div class="header-top-holder">
+                    <div class="holder-menu">
+                        <nav class="nav">
+                            <ul>
+                                <li><a href="index3.html">Главная</a></li>
+                                <li><a href="#">О компании</a></li>
+                                <li><a href="#">Поставщикам</a></li>
+                                <li><a href="#">Оптовикам</a></li>
+                                <li><a href="#">Контакты</a></li>
+                            </ul>
+                        </nav>
+                        <div class="contacts">
+                            <ul>
+                                <li><a href="tel:+38(048)737-33-01">+38(048)737-33-01</a>
+                                    <ul>
+                                        <li><a href="tel:+38(093)737-33-01">+38(093)737-33-01</a></li>
+                                        <li><a href="tel:+38(098)737-33-01">+38(098)737-33-01</a></li>
+                                        <li><a href="tel:+38(099)737-33-01">+38(099)737-33-01</a></li>
+                                        <li><a class="call-me-back" href="#">Перезвонить мне</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="holder-check">
+                        <div class="currency">
+                            <ul>
+                                <li><a href="#">$</a>
+                                    <ul>
+                                        <li><a href="#">&#8372;</a></li>
+                                        <li><a href="#">&euro;</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="language">
+                            <ul>
+                                <li><a href="#">Рус</a>
+                                    <ul>
+                                        <li><a href="#">UA</a></li>
+                                        <li><a href="#">RU</a></li>
+                                        <li><a href="#">ENG</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="enter-button">
+                            <a href="#">ВХОД</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header-lower">
+                <div class="lower-holder">
+                    <strong class="logo"><a href="index3.html"></a></strong>
+                    <nav class="nav-catalog">
+                        <ul>
+                            <li><a class="main-item" href="#">КАТАЛОГ ТОВАРОВ</a>
+                                <ul class="sub-menu">
+                                    <li><a href="#">КАТАЛОГ ЗАПЧАСТЕЙ</a></li>
+                                    <li><a href="#">КАТАЛОГ ТО</a></li>
+                                    <li><a href="#">Масла и автохимия</a>
+                                        <ul>
+                                            <li><a href="#">Масла моторные</a></li>
+                                            <li><a href="#">Масла трансмиссионные и ГУР</a></li>
+                                            <li><a href="#">Масла индустриальные</a></li>
+                                            <li><a href="#">Автокосметика</a></li>
+                                            <li><a href="#">Антифризы</a></li>
+                                            <li><a href="#">Смазки</a></li>
+                                            <li><a href="#">Присадки</a></li>
+                                            <li><a href="#">Жидкости тормозные</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Электооборудование</a>
+                                        <ul>
+                                            <li><a href="#">Масла моторные</a></li>
+                                            <li><a href="#">Масла трансмиссионные и ГУР</a></li>
+                                            <li><a href="#">Масла индустриальные</a></li>
+                                            <li><a href="#">Автокосметика</a></li>
+                                            <li><a href="#">Антифризы</a></li>
+                                            <li><a href="#">Смазки</a></li>
+                                            <li><a href="#">Присадки</a></li>
+                                            <li><a href="#">Жидкости тормозные</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Шины и диски</a>
+                                        <ul>
+                                            <li><a href="#">Масла моторные</a></li>
+                                            <li><a href="#">Масла трансмиссионные и ГУР</a></li>
+                                            <li><a href="#">Масла индустриальные</a></li>
+                                            <li><a href="#">Автокосметика</a></li>
+                                            <li><a href="#">Антифризы</a></li>
+                                            <li><a href="#">Смазки</a></li>
+                                            <li><a href="#">Присадки</a></li>
+                                            <li><a href="#">Жидкости тормозные</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Аксессуары</a>
+                                        <ul>
+                                            <li><a href="#">Масла моторные</a></li>
+                                            <li><a href="#">Масла трансмиссионные и ГУР</a></li>
+                                            <li><a href="#">Масла индустриальные</a></li>
+                                            <li><a href="#">Автокосметика</a></li>
+                                            <li><a href="#">Антифризы</a></li>
+                                            <li><a href="#">Смазки</a></li>
+                                            <li><a href="#">Присадки</a></li>
+                                            <li><a href="#">Жидкости тормозные</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Прочее</a>
+                                        <ul>
+                                            <li><a href="#">Масла моторные</a></li>
+                                            <li><a href="#">Масла трансмиссионные и ГУР</a></li>
+                                            <li><a href="#">Масла индустриальные</a></li>
+                                            <li><a href="#">Автокосметика</a></li>
+                                            <li><a href="#">Антифризы</a></li>
+                                            <li><a href="#">Смазки</a></li>
+                                            <li><a href="#">Присадки</a></li>
+                                            <li><a href="#">Жидкости тормозные</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Инструменты</a>
+                                        <ul>
+                                            <li><a href="#">Масла моторные</a></li>
+                                            <li><a href="#">Масла трансмиссионные и ГУР</a></li>
+                                            <li><a href="#">Масла индустриальные</a></li>
+                                            <li><a href="#">Автокосметика</a></li>
+                                            <li><a href="#">Антифризы</a></li>
+                                            <li><a href="#">Смазки</a></li>
+                                            <li><a href="#">Присадки</a></li>
+                                            <li><a href="#">Жидкости тормозные</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div class="search">
+                        <div class="selection">
+                            <ul>
+                                <li class="number"><a href="#">Номер детали</a>
+                                    <ul class="options">
+                                        <li><a href="#">Название детали</a></li>
+                                        <li><a href="#">Артикул детали</a></li>
+                                        <li><a href="#">VIN номер</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <form action="#" method="post">
+                            <input type="search" placeholder="90919-01237">
+                            <button type="submit"><img src="images/search.png"></button>
+                        </form>
+                    </div>
+                    <div class="trash">
+                        <a href="#">
+                            <span>Корзина</span>
+                            <div class="counter">123</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="breadcrumbs">
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><span>Шины и диски</span></li>
+                </ul>
+            </div>
+        </header>
+        <div id="content">
+            <div class="content-holder">
+                <div class="sidebar">
+                    <span class="sidebar-name">ФИЛЬТР ПОИСКА</span>
+                    <div class="sidebar-filter">
+                        <div class="price-box"><span>ЦЕНА</span></div>
+                        <div id='options'>
+                            <form method='post'>
+                                <label for='price'>
+                                    <input type="text" name="price" id="price" maxlength="10" placeholder="От ...">
+                                </label>
+                                <label for='price2'>
+                                    <input type="text" name="price" id="price2" maxlength="10" placeholder="До ...:">
+                                </label>
+                            </form>
+                            <div id="slider_price"></div>
+                        </div>
+                        <form class="fofm" action="#" method="post">
+                            <select class="new" name="type">
+                                <option class="type" value="" hidden disabled selected>ТИП</option>
+                                <option class="type" value="Бескамерные">Бескамерные</option>
+                                <option class="type" value="Низкопрофильные">Низкопрофильные</option>
+                                <option class="type" value="Беспрокольные">Беспрокольные</option>
+                                <option class="type" value="Внедорожные">Внедорожные</option>
+                                <option class="type" value="Каркасные">Каркасные</option>
+                            </select>
+                            <select class="new" name="manufacturer">
+                                <option class="type" value="" hidden disabled selected>ПРОИЗВОДИТЕЛЬ</option>
+                                <option class="type" value="Amtel">Amtel</option>
+                                <option class="type" value="Barum">Barum</option>
+                                <option class="type" value="Continental">Continental</option>
+                                <option class="type" value="Cordiant">Cordiant</option>
+                                <option class="type" value="Dunlop">Dunlop</option>
+                                <option class="type" value="Falken">Falken</option>
+                                <option class="type" value="Formula">Formula</option>
+                                <option class="type" value="Gislaved">Gislaved</option>
+                                <option class="type" value="Good Year">Good Year</option>
+                                <option class="type" value="Hankook">Hankook</option>
+                                <option class="type" value="Kormoran">Kormoran</option>
+                                <option class="type" value="Kumho">Kumho</option>
+                                <option class="type" value="Amtel">Amtel</option>
+                                <option class="type" value="Barum">Barum</option>
+                                <option class="type" value="Continental">Continental</option>
+                                <option class="type" value="Cordiant">Cordiant</option>
+                                <option class="type" value="Dunlop">Dunlop</option>
+                                <option class="type" value="Falken">Falken</option>
+                                <option class="type" value="Formula">Formula</option>
+                                <option class="type" value="Gislaved">Gislaved</option>
+                                <option class="type" value="Good">Good Year</option>
+                                <option class="type" value="Hankook">Hankook</option>
+                                <option class="type" value="Kormoran">Kormoran</option>
+                                <option class="type" value="Kumho">Kumho</option>
+                            </select>
+                            <select class="new" name="diameter">
+                                <option class="type" value="" hidden disabled selected>ДИАМЕТР</option>
+                                <option class="type" value="d13">d13</option>
+                                <option class="type" value="d14">d14</option>
+                                <option class="type" value="d15">d15</option>
+                                <option class="type" value="d16">d16</option>
+                                <option class="type" value="d17">d17</option>
+                                <option class="type" value="d18">d18</option>
+                                <option class="type" value="d19">d19</option>
+                                <option class="type" value="d20">d20</option>
+                                <option class="type" value="d21">d21</option>
+                                <option class="type" value="d22">d22</option>
+                            </select>
+                            <select class="new" name="width">
+                                <option class="type" value="" hidden disabled selected>ШИРИНА</option>
+                                <option class="type" value="155">155</option>
+                                <option class="type" value="165">165</option>
+                                <option class="type" value="175">175</option>
+                                <option class="type" value="185">185</option>
+                                <option class="type" value="195">195</option>
+                                <option class="type" value="205">205</option>
+                                <option class="type" value="215">215</option>
+                                <option class="type" value="225">225</option>
+                                <option class="type" value="235">235</option>
+                                <option class="type" value="245">245</option>
+                                <option class="type" value="255">255</option>
+                                <option class="type" value="265">265</option>
+                            </select>
+                            <select class="new" name="height">
+                                <option class="type" value="" hidden disabled selected>ВЫСОТА</option>
+                                <option class="type" value="50">50</option>
+                                <option class="type" value="55">55</option>
+                                <option class="type" value="60">60</option>
+                                <option class="type" value="65">65</option>
+                                <option class="type" value="70">70</option>
+                                <option class="type" value="75">75</option>
+                                <option class="type" value="80">80</option>
+                            </select>
+                            <select class="new" name="season">
+                                <option class="type" value="" hidden disabled selected>СЕЗОННОСТЬ</option>
+                                <option class="type" value="Всесезонка">Всесезонка</option>
+                                <option class="type" value="Летняя">Летняя</option>
+                                <option class="type" value="Змняя">Змняя</option>
+                            </select>
+                            <select class="new" name="index load">
+                                <option class="type" value="" hidden disabled selected>ИНДЕКС НАГРУЗКИ</option>
+                                <option class="type" value="70">70</option>
+                                <option class="type" value="75">75</option>
+                                <option class="type" value="80">80</option>
+                                <option class="type" value="85">85</option>
+                                <option class="type" value="90">90</option>
+                                <option class="type" value="95">95</option>
+                                <option class="type" value="100">100</option>
+                            </select>
+                            <select class="new" name="axis">
+                                <option class="type" value="" hidden disabled selected>ОСЬ</option>
+                                <option class="type" value="Ось1">Ось1</option>
+                                <option class="type" value="Ось2">Ось2</option>
+                                <option class="type" value="Ось3">Ось3</option>
+                                <option class="type" value="Ось4">Ось4</option>
+                                <option class="type" value="Ось5">Ось5</option>
+                                <option class="type" value="Ось6">Ось6</option>
+                                <option class="type" value="Ось7">Ось7</option>
+                            </select>
+                            <select class="new" name="thorns">
+                                <option class="type" value="" hidden disabled selected>ШИПЫ</option>
+                                <option class="type" value="Шипы1">Шипы1</option>
+                                <option class="type" value="Шипы2">Шипы2</option>
+                                <option class="type" value="Шипы3">Шипы3</option>
+                                <option class="type" value="Шипы4">Шипы4</option>
+                                <option class="type" value="Шипы5">Шипы5</option>
+                            </select>
+                        </form>
+                    </div>
+                    <span class="sidebar-reset"><a href="index.html">СБРОСИТЬ ФИЛЬТР</a></span>
+                </div>
+                <div class="content-box">
+                    <div class="title">
+                        <span class="title-name">ШИНЫ И ДИСКИ</span>
+                    </div>
+                    <div class="sorting-box">
+                        <span class="sorting-name">Сортировать:</span>
+                        <ul class="sorting">
+                            <li><a href="#">От дорогих</a></li>
+                            <li><a href="#">От дешевых</a></li>
+                            <li><a href="#">Топ продаж</a></li>
+                            <li><a href="#">Новинки</a></li>
+                            <li><a href="#">Акция</a></li>
+                            <li><a href="#">Суперцена</a></li>
+                            <li><a href="#">Скоро в продаже</a></li>
+                        </ul>
+                    </div>
+                    <div class="catalog">
+                        <div class="product">
+                            <div class="cover-info">
+                                <span class="close"></span>
+                                <span class="info-name">АВТОМОБИЛЬНАЯ КАМЕРА DOLLEX R13</span>
+                                <div class="info-box">
+                                    <ul>
+                                        <li><span class="parameter">Тип</span><span class="property">Легковые</span></li>
+                                        <li><span class="parameter">Производитель</span><span class="property">Cordiant</span></li>
+                                        <li><span class="parameter">Ширина мм.</span><span class="property">155</span></li>
+                                        <li><span class="parameter">Высота %</span><span class="property">70</span></li>
+                                        <li><span class="parameter">Диаметр, дюйм</span><span class="property">13</span></li>
+                                        <li><span class="parameter">Сезонность</span><span class="property">ЛЕТО</span></li>
+                                        <li><span class="parameter">Индекс нагрузки</span><span class="property">75</span></li>
+                                        <li><span class="parameter">Индекс скорости</span><span class="property">Т</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <span class="product-info"></span>
+                            <span class="product-search"></span>
+                            <a href="index2.html">
+                                <img src="images/product01.jpg">
+                                <span class="product-name">АВТОМОБИЛЬНАЯ КАМЕРА DOLLEX R13</span>
+                            </a>
+                            <span class="product-buy"><a href="#">КУПИТЬ</a></span>
+                        </div>
+                        <div class="product">
+                            <div class="cover-info">
+                                <span class="close"></span>
+                                <span class="info-name">АВТОМОБИЛЬНАЯ КАМЕРА DOLLEX R13</span>
+                                <div class="info-box">
+                                    <ul>
+                                        <li><span class="parameter">Тип</span><span class="property">Легковые</span></li>
+                                        <li><span class="parameter">Производитель</span><span class="property">Cordiant</span></li>
+                                        <li><span class="parameter">Ширина мм.</span><span class="property">155</span></li>
+                                        <li><span class="parameter">Высота %</span><span class="property">70</span></li>
+                                        <li><span class="parameter">Диаметр, дюйм</span><span class="property">13</span></li>
+                                        <li><span class="parameter">Сезонность</span><span class="property">ЛЕТО</span></li>
+                                        <li><span class="parameter">Индекс нагрузки</span><span class="property">75</span></li>
+                                        <li><span class="parameter">Индекс скорости</span><span class="property">Т</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <span class="product-info"></span>
+                            <span class="product-search"></span>
+                            <a href="#">
+                                <img src="images/product02.jpg">
+                                <span class="product-name">АВТОМОБИЛЬНАЯ КАМЕРА DOLLEX R13</span>
+                            </a>
+                            <span class="product-buy"><a href="#">КУПИТЬ</a></span>
+                        </div>
+                        <div class="product">
+                            <div class="cover-info">
+                                <span class="close"></span>
+                                <span class="info-name">АВТОМОБИЛЬНАЯ КАМЕРА DOLLEX R13</span>
+                                <div class="info-box">
+                                    <ul>
+                                        <li><span class="parameter">Тип</span><span class="property">Легковые</span></li>
+                                        <li><span class="parameter">Производитель</span><span class="property">Cordiant</span></li>
+                                        <li><span class="parameter">Ширина мм.</span><span class="property">155</span></li>
+                                        <li><span class="parameter">Высота %</span><span class="property">70</span></li>
+                                        <li><span class="parameter">Диаметр, дюйм</span><span class="property">13</span></li>
+                                        <li><span class="parameter">Сезонность</span><span class="property">ЛЕТО</span></li>
+                                        <li><span class="parameter">Индекс нагрузки</span><span class="property">75</span></li>
+                                        <li><span class="parameter">Индекс скорости</span><span class="property">Т</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <span class="product-info"></span>
+                            <span class="product-search"></span>
+                            <a href="#">
+                                <img src="images/product03.jpg">
+                                <span class="product-name">АВТОМОБИЛЬНАЯ КАМЕРА DOLLEX R13</span>
+                            </a>
+                            <span class="product-buy"><a href="#">КУПИТЬ</a></span>
+                        </div>
+                        <div class="product">
+                            <div class="cover-info">
+                                <span class="close"></span>
+                                <span class="info-name">АВТОМОБИЛЬНАЯ КАМЕРА DOLLEX R13</span>
+                                <div class="info-box">
+                                    <ul>
+                                        <li><span class="parameter">Тип</span><span class="property">Легковые</span></li>
+                                        <li><span class="parameter">Производитель</span><span class="property">Cordiant</span></li>
+                                        <li><span class="parameter">Ширина мм.</span><span class="property">155</span></li>
+                                        <li><span class="parameter">Высота %</span><span class="property">70</span></li>
+                                        <li><span class="parameter">Диаметр, дюйм</span><span class="property">13</span></li>
+                                        <li><span class="parameter">Сезонность</span><span class="property">ЛЕТО</span></li>
+                                        <li><span class="parameter">Индекс нагрузки</span><span class="property">75</span></li>
+                                        <li><span class="parameter">Индекс скорости</span><span class="property">Т</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <span class="product-info"></span>
+                            <span class="product-search"></span>
+                            <a href="#">
+                                <img src="images/product04.jpg">
+                                <span class="product-name">АВТОМОБИЛЬНАЯ КАМЕРА DOLLEX R13</span>
+                            </a>
+                            <span class="product-buy"><a href="#">КУПИТЬ</a></span>
+                        </div>
+                        <div class="product">
+                            <div class="cover-info">
+                                <span class="close"></span>
+                                <span class="info-name">АВТОМОБИЛЬНАЯ КАМЕРА DOLLEX R13</span>
+                                <div class="info-box">
+                                    <ul>
+                                        <li><span class="parameter">Тип</span><span class="property">Легковые</span></li>
+                                        <li><span class="parameter">Производитель</span><span class="property">Cordiant</span></li>
+                                        <li><span class="parameter">Ширина мм.</span><span class="property">155</span></li>
+                                        <li><span class="parameter">Высота %</span><span class="property">70</span></li>
+                                        <li><span class="parameter">Диаметр, дюйм</span><span class="property">13</span></li>
+                                        <li><span class="parameter">Сезонность</span><span class="property">ЛЕТО</span></li>
+                                        <li><span class="parameter">Индекс нагрузки</span><span class="property">75</span></li>
+                                        <li><span class="parameter">Индекс скорости</span><span class="property">Т</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <span class="product-info"></span>
+                            <span class="product-search"></span>
+                            <a href="#">
+                                <img src="images/product05.jpg">
+                                <span class="product-name">АВТОМОБИЛЬНАЯ КАМЕРА DOLLEX R13</span>
+                            </a>
+                            <span class="product-buy"><a href="#">КУПИТЬ</a></span>
+                        </div>
+                        <div class="product">
+                            <div class="cover-info">
+                                <span class="close"></span>
+                                <span class="info-name">АВТОМОБИЛЬНАЯ КАМЕРА DOLLEX R13</span>
+                                <div class="info-box">
+                                    <ul>
+                                        <li><span class="parameter">Тип</span><span class="property">Легковые</span></li>
+                                        <li><span class="parameter">Производитель</span><span class="property">Cordiant</span></li>
+                                        <li><span class="parameter">Ширина мм.</span><span class="property">155</span></li>
+                                        <li><span class="parameter">Высота %</span><span class="property">70</span></li>
+                                        <li><span class="parameter">Диаметр, дюйм</span><span class="property">13</span></li>
+                                        <li><span class="parameter">Сезонность</span><span class="property">ЛЕТО</span></li>
+                                        <li><span class="parameter">Индекс нагрузки</span><span class="property">75</span></li>
+                                        <li><span class="parameter">Индекс скорости</span><span class="property">Т</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <span class="product-info"></span>
+                            <span class="product-search"></span>
+                            <a href="#">
+                                <img src="images/product06.jpg">
+                                <span class="product-name">АВТОМОБИЛЬНАЯ КАМЕРА DOLLEX R13</span>
+                            </a>
+                            <span class="product-buy"><a href="#">КУПИТЬ</a></span>
+                        </div>
+                        <div class="product">
+                            <div class="cover-info">
+                                <span class="close"></span>
+                                <span class="info-name">АВТОМОБИЛЬНАЯ КАМЕРА DOLLEX R13</span>
+                                <div class="info-box">
+                                    <ul>
+                                        <li><span class="parameter">Тип</span><span class="property">Легковые</span></li>
+                                        <li><span class="parameter">Производитель</span><span class="property">Cordiant</span></li>
+                                        <li><span class="parameter">Ширина мм.</span><span class="property">155</span></li>
+                                        <li><span class="parameter">Высота %</span><span class="property">70</span></li>
+                                        <li><span class="parameter">Диаметр, дюйм</span><span class="property">13</span></li>
+                                        <li><span class="parameter">Сезонность</span><span class="property">ЛЕТО</span></li>
+                                        <li><span class="parameter">Индекс нагрузки</span><span class="property">75</span></li>
+                                        <li><span class="parameter">Индекс скорости</span><span class="property">Т</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <span class="product-info"></span>
+                            <span class="product-search"></span>
+                            <a href="#">
+                                <img src="images/product01.jpg">
+                                <span class="product-name">АВТОМОБИЛЬНАЯ КАМЕРА DOLLEX R13</span>
+                            </a>
+                            <span class="product-buy"><a href="#">КУПИТЬ</a></span>
+                        </div>
+                        <div class="product">
+                            <div class="cover-info">
+                                <span class="close"></span>
+                                <span class="info-name">АВТОМОБИЛЬНАЯ КАМЕРА DOLLEX R13</span>
+                                <div class="info-box">
+                                    <ul>
+                                        <li><span class="parameter">Тип</span><span class="property">Легковые</span></li>
+                                        <li><span class="parameter">Производитель</span><span class="property">Cordiant</span></li>
+                                        <li><span class="parameter">Ширина мм.</span><span class="property">155</span></li>
+                                        <li><span class="parameter">Высота %</span><span class="property">70</span></li>
+                                        <li><span class="parameter">Диаметр, дюйм</span><span class="property">13</span></li>
+                                        <li><span class="parameter">Сезонность</span><span class="property">ЛЕТО</span></li>
+                                        <li><span class="parameter">Индекс нагрузки</span><span class="property">75</span></li>
+                                        <li><span class="parameter">Индекс скорости</span><span class="property">Т</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <span class="product-info"></span>
+                            <span class="product-search"></span>
+                            <a href="#">
+                                <img src="images/product02.jpg">
+                                <span class="product-name">АВТОМОБИЛЬНАЯ КАМЕРА DOLLEX R13</span>
+                            </a>
+                            <span class="product-buy"><a href="#">КУПИТЬ</a></span>
+                        </div>
+                        <div class="product">
+                            <div class="cover-info">
+                                <span class="close"></span>
+                                <span class="info-name">АВТОМОБИЛЬНАЯ КАМЕРА DOLLEX R13</span>
+                                <div class="info-box">
+                                    <ul>
+                                        <li><span class="parameter">Тип</span><span class="property">Легковые</span></li>
+                                        <li><span class="parameter">Производитель</span><span class="property">Cordiant</span></li>
+                                        <li><span class="parameter">Ширина мм.</span><span class="property">155</span></li>
+                                        <li><span class="parameter">Высота %</span><span class="property">70</span></li>
+                                        <li><span class="parameter">Диаметр, дюйм</span><span class="property">13</span></li>
+                                        <li><span class="parameter">Сезонность</span><span class="property">ЛЕТО</span></li>
+                                        <li><span class="parameter">Индекс нагрузки</span><span class="property">75</span></li>
+                                        <li><span class="parameter">Индекс скорости</span><span class="property">Т</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <span class="product-info"></span>
+                            <span class="product-search"></span>
+                            <a href="#"></a>
+                            <img src="images/product01.jpg">
+                            <span class="product-name">АВТОМОБИЛЬНАЯ КАМЕРА DOLLEX R13</span>
+                            <span class="product-buy"><a href="#">КУПИТЬ</a></span>
+                        </div>
+                        <div class="product">
+                            <div class="cover-info">
+                                <span class="close"></span>
+                                <span class="info-name">АВТОМОБИЛЬНАЯ КАМЕРА DOLLEX R13</span>
+                                <div class="info-box">
+                                    <ul>
+                                        <li><span class="parameter">Тип</span><span class="property">Легковые</span></li>
+                                        <li><span class="parameter">Производитель</span><span class="property">Cordiant</span></li>
+                                        <li><span class="parameter">Ширина мм.</span><span class="property">155</span></li>
+                                        <li><span class="parameter">Высота %</span><span class="property">70</span></li>
+                                        <li><span class="parameter">Диаметр, дюйм</span><span class="property">13</span></li>
+                                        <li><span class="parameter">Сезонность</span><span class="property">ЛЕТО</span></li>
+                                        <li><span class="parameter">Индекс нагрузки</span><span class="property">75</span></li>
+                                        <li><span class="parameter">Индекс скорости</span><span class="property">Т</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <span class="product-info"></span>
+                            <span class="product-search"></span>
+                            <a href="#">
+                                <img src="images/product06.jpg">
+                                <span class="product-name">АВТОМОБИЛЬНАЯ КАМЕРА DOLLEX R13</span>
+                            </a>
+                            <span class="product-buy"><a href="#">КУПИТЬ</a></span>
+                        </div>
+                        <div class="product">
+                            <div class="cover-info">
+                                <span class="close"></span>
+                                <span class="info-name">АВТОМОБИЛЬНАЯ КАМЕРА DOLLEX R13</span>
+                                <div class="info-box">
+                                    <ul>
+                                        <li><span class="parameter">Тип</span><span class="property">Легковые</span></li>
+                                        <li><span class="parameter">Производитель</span><span class="property">Cordiant</span></li>
+                                        <li><span class="parameter">Ширина мм.</span><span class="property">155</span></li>
+                                        <li><span class="parameter">Высота %</span><span class="property">70</span></li>
+                                        <li><span class="parameter">Диаметр, дюйм</span><span class="property">13</span></li>
+                                        <li><span class="parameter">Сезонность</span><span class="property">ЛЕТО</span></li>
+                                        <li><span class="parameter">Индекс нагрузки</span><span class="property">75</span></li>
+                                        <li><span class="parameter">Индекс скорости</span><span class="property">Т</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <span class="product-info"></span>
+                            <span class="product-search"></span>
+                            <a href="#">
+                                <img src="images/product02.jpg">
+                                <span class="product-name">АВТОМОБИЛЬНАЯ КАМЕРА DOLLEX R13</span>
+                            </a>
+                            <span class="product-buy"><a href="#">КУПИТЬ</a></span>
+                        </div>
+                        <div class="product">
+                            <div class="cover-info">
+                                <span class="close"></span>
+                                <span class="info-name">АВТОМОБИЛЬНАЯ КАМЕРА DOLLEX R13</span>
+                                <div class="info-box">
+                                    <ul>
+                                        <li><span class="parameter">Тип</span><span class="property">Легковые</span></li>
+                                        <li><span class="parameter">Производитель</span><span class="property">Cordiant</span></li>
+                                        <li><span class="parameter">Ширина мм.</span><span class="property">155</span></li>
+                                        <li><span class="parameter">Высота %</span><span class="property">70</span></li>
+                                        <li><span class="parameter">Диаметр, дюйм</span><span class="property">13</span></li>
+                                        <li><span class="parameter">Сезонность</span><span class="property">ЛЕТО</span></li>
+                                        <li><span class="parameter">Индекс нагрузки</span><span class="property">75</span></li>
+                                        <li><span class="parameter">Индекс скорости</span><span class="property">Т</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <span class="product-info"></span>
+                            <span class="product-search"></span>
+                            <a href="#">
+                                <img src="images/product01.jpg">
+                                <span class="product-name">АВТОМОБИЛЬНАЯ КАМЕРА DOLLEX R13</span>
+                            </a>
+                            <span class="product-buy"><a href="#">КУПИТЬ</a></span>
+                        </div>
+                        <div class="product">
+                            <div class="cover-info">
+                                <span class="close"></span>
+                                <span class="info-name">АВТОМОБИЛЬНАЯ КАМЕРА DOLLEX R13</span>
+                                <div class="info-box">
+                                    <ul>
+                                        <li><span class="parameter">Тип</span><span class="property">Легковые</span></li>
+                                        <li><span class="parameter">Производитель</span><span class="property">Cordiant</span></li>
+                                        <li><span class="parameter">Ширина мм.</span><span class="property">155</span></li>
+                                        <li><span class="parameter">Высота %</span><span class="property">70</span></li>
+                                        <li><span class="parameter">Диаметр, дюйм</span><span class="property">13</span></li>
+                                        <li><span class="parameter">Сезонность</span><span class="property">ЛЕТО</span></li>
+                                        <li><span class="parameter">Индекс нагрузки</span><span class="property">75</span></li>
+                                        <li><span class="parameter">Индекс скорости</span><span class="property">Т</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <span class="product-info"></span>
+                            <span class="product-search"></span>
+                            <a href="#">
+                                <img src="images/product03.jpg">
+                                <span class="product-name">АВТОМОБИЛЬНАЯ КАМЕРА DOLLEX R13</span>
+                            </a>
+                            <span class="product-buy"><a href="#">КУПИТЬ</a></span>
+                        </div>
+                        <div class="product">
+                            <div class="cover-info">
+                                <span class="close"></span>
+                                <span class="info-name">АВТОМОБИЛЬНАЯ КАМЕРА DOLLEX R13</span>
+                                <div class="info-box">
+                                    <ul>
+                                        <li><span class="parameter">Тип</span><span class="property">Легковые</span></li>
+                                        <li><span class="parameter">Производитель</span><span class="property">Cordiant</span></li>
+                                        <li><span class="parameter">Ширина мм.</span><span class="property">155</span></li>
+                                        <li><span class="parameter">Высота %</span><span class="property">70</span></li>
+                                        <li><span class="parameter">Диаметр, дюйм</span><span class="property">13</span></li>
+                                        <li><span class="parameter">Сезонность</span><span class="property">ЛЕТО</span></li>
+                                        <li><span class="parameter">Индекс нагрузки</span><span class="property">75</span></li>
+                                        <li><span class="parameter">Индекс скорости</span><span class="property">Т</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <span class="product-info"></span>
+                            <span class="product-search"></span>
+                            <a href="#">
+                                <img src="images/product04.jpg">
+                                <span class="product-name">АВТОМОБИЛЬНАЯ КАМЕРА DOLLEX R13</span>
+                            </a>
+                            <span class="product-buy"><a href="#">КУПИТЬ</a></span>
+                        </div>
+                        <div class="product">
+                            <div class="cover-info">
+                                <span class="close"></span>
+                                <span class="info-name">АВТОМОБИЛЬНАЯ КАМЕРА DOLLEX R13</span>
+                                <div class="info-box">
+                                    <ul>
+                                        <li><span class="parameter">Тип</span><span class="property">Легковые</span></li>
+                                        <li><span class="parameter">Производитель</span><span class="property">Cordiant</span></li>
+                                        <li><span class="parameter">Ширина мм.</span><span class="property">155</span></li>
+                                        <li><span class="parameter">Высота %</span><span class="property">70</span></li>
+                                        <li><span class="parameter">Диаметр, дюйм</span><span class="property">13</span></li>
+                                        <li><span class="parameter">Сезонность</span><span class="property">ЛЕТО</span></li>
+                                        <li><span class="parameter">Индекс нагрузки</span><span class="property">75</span></li>
+                                        <li><span class="parameter">Индекс скорости</span><span class="property">Т</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <span class="product-info"></span>
+                            <span class="product-search"></span>
+                            <a href="#">
+                                <img src="images/product05.jpg">
+                                <span class="product-name">АВТОМОБИЛЬНАЯ КАМЕРА DOLLEX R13</span>
+                            </a>
+                            <span class="product-buy"><a href="#">КУПИТЬ</a></span>
+                        </div>
+                        <div class="product">
+                            <div class="cover-info">
+                                <span class="close"></span>
+                                <span class="info-name">АВТОМОБИЛЬНАЯ КАМЕРА DOLLEX R13</span>
+                                <div class="info-box">
+                                    <ul>
+                                        <li><span class="parameter">Тип</span><span class="property">Легковые</span></li>
+                                        <li><span class="parameter">Производитель</span><span class="property">Cordiant</span></li>
+                                        <li><span class="parameter">Ширина мм.</span><span class="property">155</span></li>
+                                        <li><span class="parameter">Высота %</span><span class="property">70</span></li>
+                                        <li><span class="parameter">Диаметр, дюйм</span><span class="property">13</span></li>
+                                        <li><span class="parameter">Сезонность</span><span class="property">ЛЕТО</span></li>
+                                        <li><span class="parameter">Индекс нагрузки</span><span class="property">75</span></li>
+                                        <li><span class="parameter">Индекс скорости</span><span class="property">Т</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <span class="product-info"></span>
+                            <span class="product-search"></span>
+                            <a href="#">
+                                <img src="images/product06.jpg">
+                                <span class="product-name">АВТОМОБИЛЬНАЯ КАМЕРА DOLLEX R13</span>
+                            </a>
+                            <span class="product-buy"><a href="#">КУПИТЬ</a></span>
+                        </div>
+                        <div class="product">
+                            <div class="cover-info">
+                                <span class="close"></span>
+                                <span class="info-name">АВТОМОБИЛЬНАЯ КАМЕРА DOLLEX R13</span>
+                                <div class="info-box">
+                                    <ul>
+                                        <li><span class="parameter">Тип</span><span class="property">Легковые</span></li>
+                                        <li><span class="parameter">Производитель</span><span class="property">Cordiant</span></li>
+                                        <li><span class="parameter">Ширина мм.</span><span class="property">155</span></li>
+                                        <li><span class="parameter">Высота %</span><span class="property">70</span></li>
+                                        <li><span class="parameter">Диаметр, дюйм</span><span class="property">13</span></li>
+                                        <li><span class="parameter">Сезонность</span><span class="property">ЛЕТО</span></li>
+                                        <li><span class="parameter">Индекс нагрузки</span><span class="property">75</span></li>
+                                        <li><span class="parameter">Индекс скорости</span><span class="property">Т</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <span class="product-info"></span>
+                            <span class="product-search"></span>
+                            <a href="#">
+                                <img src="images/product01.jpg">
+                                <span class="product-name">АВТОМОБИЛЬНАЯ КАМЕРА DOLLEX R13</span>
+                            </a>
+                            <span class="product-buy"><a href="#">КУПИТЬ</a></span>
+                        </div>
+                        <div class="product">
+                            <div class="cover-info">
+                                <span class="close"></span>
+                                <span class="info-name">АВТОМОБИЛЬНАЯ КАМЕРА DOLLEX R13</span>
+                                <div class="info-box">
+                                    <ul>
+                                        <li><span class="parameter">Тип</span><span class="property">Легковые</span></li>
+                                        <li><span class="parameter">Производитель</span><span class="property">Cordiant</span></li>
+                                        <li><span class="parameter">Ширина мм.</span><span class="property">155</span></li>
+                                        <li><span class="parameter">Высота %</span><span class="property">70</span></li>
+                                        <li><span class="parameter">Диаметр, дюйм</span><span class="property">13</span></li>
+                                        <li><span class="parameter">Сезонность</span><span class="property">ЛЕТО</span></li>
+                                        <li><span class="parameter">Индекс нагрузки</span><span class="property">75</span></li>
+                                        <li><span class="parameter">Индекс скорости</span><span class="property">Т</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <span class="product-info"></span>
+                            <span class="product-search"></span>
+                            <a href="#">
+                                <img src="images/product02.jpg">
+                                <span class="product-name">АВТОМОБИЛЬНАЯ КАМЕРА DOLLEX R13</span>
+                            </a>
+                            <span class="product-buy"><a href="#">КУПИТЬ</a></span>
+                        </div>
+                        <div class="product">
+                            <div class="cover-info">
+                                <span class="close"></span>
+                                <span class="info-name">АВТОМОБИЛЬНАЯ КАМЕРА DOLLEX R13</span>
+                                <div class="info-box">
+                                    <ul>
+                                        <li><span class="parameter">Тип</span><span class="property">Легковые</span></li>
+                                        <li><span class="parameter">Производитель</span><span class="property">Cordiant</span></li>
+                                        <li><span class="parameter">Ширина мм.</span><span class="property">155</span></li>
+                                        <li><span class="parameter">Высота %</span><span class="property">70</span></li>
+                                        <li><span class="parameter">Диаметр, дюйм</span><span class="property">13</span></li>
+                                        <li><span class="parameter">Сезонность</span><span class="property">ЛЕТО</span></li>
+                                        <li><span class="parameter">Индекс нагрузки</span><span class="property">75</span></li>
+                                        <li><span class="parameter">Индекс скорости</span><span class="property">Т</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <span class="product-info"></span>
+                            <span class="product-search"></span>
+                            <a href="#">
+                                <img src="images/product01.jpg">
+                                <span class="product-name">АВТОМОБИЛЬНАЯ КАМЕРА DOLLEX R13</span>
+                            </a>
+                            <span class="product-buy"><a href="#">КУПИТЬ</a></span>
+                        </div>
+                        <div class="product">
+                            <div class="cover-info">
+                                <span class="close"></span>
+                                <span class="info-name">АВТОМОБИЛЬНАЯ КАМЕРА DOLLEX R13</span>
+                                <div class="info-box">
+                                    <ul>
+                                        <li><span class="parameter">Тип</span><span class="property">Легковые</span></li>
+                                        <li><span class="parameter">Производитель</span><span class="property">Cordiant</span></li>
+                                        <li><span class="parameter">Ширина мм.</span><span class="property">155</span></li>
+                                        <li><span class="parameter">Высота %</span><span class="property">70</span></li>
+                                        <li><span class="parameter">Диаметр, дюйм</span><span class="property">13</span></li>
+                                        <li><span class="parameter">Сезонность</span><span class="property">ЛЕТО</span></li>
+                                        <li><span class="parameter">Индекс нагрузки</span><span class="property">75</span></li>
+                                        <li><span class="parameter">Индекс скорости</span><span class="property">Т</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <span class="product-info"></span>
+                            <span class="product-search"></span>
+                            <a href="#">
+                                <img src="images/product06.jpg">
+                                <span class="product-name">АВТОМОБИЛЬНАЯ КАМЕРА DOLLEX R13</span>
+                            </a>
+                            <span class="product-buy"><a href="#">КУПИТЬ</a></span>
+                        </div>
+                    </div>
+                    <nav class="page-nav">
+                        <span class="arrow-left"><a href="#"></a></span>
+                        <span class="arrow-right"><a href="#"></a></span>
+                        <div class="nav-box">
+                            <ul>
+                                <li><a href="#">1</a></li>
+                                <li><span>...</span></li>
+                                <li><a href="#">3</a></li>
+                                <li><span>4</span></li>
+                                <li><a href="#">5</a></li>
+                                <li><a href="#">6</a></li>
+                                <li><span>...</span></li>
+                                <li><a href="#">12</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+            <div class="footer-holder">
+                <div class="copyright">&copy; 2015 "Technomir"</div>
+                <nav class="footer-nav">
+                    <ul>
+                        <li><a href="#">Как начать</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Оплата и доставка</a></li>
+                        <li><a href="#">Новости</a></li>
+                        <li><a href="#">Возврат товара</a></li>
+                        <li><a href="#">API</a></li>
+                    </ul>
+                </nav>
+                <div class="footer-social">
+                    <ul>
+                        <li><a class="classmate" href="#"></a></li>
+                        <li><a class="youtube" href="#"></a></li>
+                        <li><a class="twitter" href="#"></a></li>
+                        <li><a class="google" href="#"></a></li>
+                        <li><a class="facebook" href="#"></a></li>
+                        <li><a class="contact" href="#"></a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+        <div class="hidden-box detail">
+            <div class="hidden">
+                <span class="close-detail"></span>
+                <span class="detail-name"><a href="#">АВТОМОБИЛЬНАЯ КАМЕРА DOLLEX R13</a></span>
+                <span class="detail-artc">Арт: 234636876</span>
+                <div class="detail-product">
+                    <div class="detail-image">
+                        <a href="#">
+                            <img src="images/product01.jpg">
+                        </a>
+                    </div>
+                    <div class="info-box">
+                        <ul>
+                            <li><span class="parameter">Тип</span><span class="dot"></span><span class="property">Легковые</span></li>
+                            <li><span class="parameter">Производитель</span><span class="dot"></span><span class="property"><a href="#">Cordiant</a></span></li>
+                            <li><span class="parameter">Ширина мм.</span><span class="dot"></span><span class="property">155</span></li>
+                            <li><span class="parameter">Высота %</span><span class="dot"></span><span class="property">70</span></li>
+                            <li><span class="parameter">Диаметр, дюйм</span><span class="dot"></span><span class="property">13</span></li>
+                            <li><span class="parameter">Сезонность</span><span class="dot"></span><span class="property">ЛЕТО</span></li>
+                            <li><span class="parameter">Индекс нагрузки</span><span class="dot"></span><span class="property">75</span></li>
+                            <li><span class="parameter">Индекс скорости</span><span class="dot"></span><span class="property">Т</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="characteristics">
+                    <div class="characteristics-box">
+                        <span class="characteristics-name">ХАРАКТЕРИСТИКИ</span>
+                        <a href="#">АНАЛОГИ</a>
+                    </div>
+                    <div class="characteristics-text">
+                        <p>Автомобильная камера R13 подходит на автомобили семейства Ваз, Ода импортные автомобили подобного класса.
+                            Типоразмеры колёс, на которые подходит данная камера, имеют следующие обозначения: 6,15-13; 6,45-13;
+                            145/70R13; 155/65R13; 155/70R13; 165/80R13; 165/70R13; 175/70R13; 185/65R13; 185/75R13</p>
+                    </div>
+                </div>
+                <div class="close-button"><a href="#">ЗАКРЫТЬ</a></div>
+                <div class="buy-button"><a href="#">КУПИТЬ</a></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
